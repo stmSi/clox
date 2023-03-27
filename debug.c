@@ -1,5 +1,6 @@
 #include "debug.h"
 #include "value.h"
+#include "scanner.h"
 #include <stdio.h>
 
 void disassembleChunk(Chunk *chunk, const char *name) {
@@ -13,7 +14,7 @@ void disassembleChunk(Chunk *chunk, const char *name) {
 int disassembleInstruction(Chunk *chunk, int offset) {
   printf("%04d ", offset);
   if (offset > 0 && chunk->lines[offset] == chunk->lines[offset - 1]) {
-    printf("   | ");
+    printf("  asdf | ");
   } else {
     printf("%4d ", chunk->lines[offset]);
   }
